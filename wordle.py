@@ -67,3 +67,5 @@ while (guesses_left > 0):
     for attempt in attempts:
         print(attempt)
 print('\nyou lose bud :(')
+print('The word was: ' + word_of_the_day)
+print('\n' + five_letter_dictionary[word_of_the_day])
