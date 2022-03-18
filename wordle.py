@@ -12,7 +12,7 @@ five_letter_dictionary = {}
 with open('5letterdict.json', 'r') as f:
     five_letter_dictionary = json.load(f)
 
-possible_words = five_letter_dictionary.keys()
+possible_words = list(five_letter_dictionary.keys())
 alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'}
 word_of_the_day = random.choice(possible_words)
 colour_to_character_dict_list = [{'': ''}, {'': ''}, {'':''}, {'':''}, {'':''}]
@@ -55,8 +55,8 @@ while (guesses_left > 0):
     invalid_guess = True
     guess = ''
     while invalid_guess:
-        guess = raw_input(default_colour + '\nEnter a 5 letter word: \n\n')
-        invalid_guess = len(guess) is not 5 or guess not in possible_words
+        guess = input(default_colour + '\nEnter a 5 letter word: \n\n')
+        invalid_guess = len(guess) != 5 or guess not in possible_words
     if guess == word_of_the_day:
         print('\nYOU WIN!!!!!!!!!!!!!!!!!!!!!!!\n')
         print(five_letter_dictionary[word_of_the_day])
